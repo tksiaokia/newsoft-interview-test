@@ -6,15 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
 
 import com.sean.newsoft.R;
-import com.sean.newsoft.activity.BaseActivity;
 import com.sean.newsoft.databinding.EditListingBottomSheetBinding;
-import com.sean.newsoft.databinding.ListingCellBinding;
 import com.sean.newsoft.enums.LocalData;
 import com.sean.newsoft.interfaces.SimpleUIInterface;
-import com.sean.newsoft.local.SharedPreferenceHelper;
+import com.sean.newsoft.localdb.SharedPreferenceHelper;
 import com.sean.newsoft.model.Listing;
 import com.sean.newsoft.model.UserToken;
 import com.sean.newsoft.model.response.GeneralResponse;

@@ -1,19 +1,15 @@
 package com.sean.newsoft.activity;
 
-import android.app.ProgressDialog;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.sean.newsoft.R;
 import com.sean.newsoft.databinding.LoginActivityBinding;
 import com.sean.newsoft.enums.LocalData;
-import com.sean.newsoft.local.SharedPreferenceHelper;
+import com.sean.newsoft.localdb.SharedPreferenceHelper;
 import com.sean.newsoft.model.response.GeneralResponse;
 import com.sean.newsoft.model.UserToken;
-import com.sean.newsoft.services.BaseService;
 import com.sean.newsoft.services.MainService;
 
 
