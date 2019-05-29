@@ -2,6 +2,7 @@ package com.sean.newsoft.services;
 
 import android.util.Log;
 
+import com.sean.newsoft.interfaces.BackoffCallback;
 import com.sean.newsoft.model.UserToken;
 import com.sean.newsoft.model.response.ApiResponse;
 import com.sean.newsoft.model.response.GeneralResponse;
@@ -15,7 +16,7 @@ import retrofit2.Response;
 public class BaseService {
     //General function to enqueue call which accept generic type
     protected <T extends ApiResponse> void enqueueCall(Call<T> call, final ResponseSuccessInterface<T> successCallback, final GeneralErrorInterface callback){
-        call.enqueue(new Callback<T>() {
+        call.enqueue(new BackoffCallback<T>() {
             @Override
             public void onResponse(Call<T> call, Response<T> response) {
                 T apiResponse = response.body();
@@ -30,8 +31,10 @@ public class BaseService {
                 }
             }
 
+
+
             @Override
-            public void onFailure(Call<T> call, Throwable t) {
+            public void onFailedAfterRetry(Throwable t) {
                 handleGeneralError(t,callback);
             }
         });
